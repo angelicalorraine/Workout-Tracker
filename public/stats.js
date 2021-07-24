@@ -54,6 +54,9 @@ function populateChart(data) {
         legend: {
           labels: {
             color: "white",
+            font: {
+              size: 15,
+            }
           }
         },
       },
@@ -67,13 +70,19 @@ function populateChart(data) {
           beginAtZero: true,
           ticks: {
             color: "#ededed",
-            weight: "50px"
+            weight: "50px",
+            font: {
+              size: 13,
+            }
           }
         },
         x: {
           ticks: {
             color: "#ededed",
-            weight: "50px"
+            weight: "50px",
+            font: {
+              size: 13,
+            }
           }
         }
       },
@@ -113,6 +122,9 @@ function populateChart(data) {
         legend: {
           labels: {
             color: "white",
+            font: {
+              size: 15,
+            }
           }
         },
       },
@@ -127,14 +139,20 @@ function populateChart(data) {
           ticks: {
             beginAtZero: true,
             color: "#ededed",
-            weight: "50px"
+            weight: "50px",
+            font: {
+              size: 13,
+            }
           },
         },
 
         x: {
           ticks: {
             color: "#ededed",
-            weight: "50px"
+            weight: "50px",
+            font: {
+              size: 13,
+            }
           }
         }
 
