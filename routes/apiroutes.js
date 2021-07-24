@@ -7,23 +7,45 @@ const Workout = require("../models/workout");
 
 //show workouts on workouts page
 router.get("/api/workouts", (req, res) => {
-  Workout.find({}).then(dbWorkout => {
-    res.json(dbWorkout);
-  })
+  Workout.aggregate([
+    {
+      $addFields: {
+        "totalDuration":
+        {
+          $sum: "$exercises.duration"
+        },
+      },
+    },
+  ])
+    .then(dbWorkout => {
+      res.json(dbWorkout);
+    })
     .catch(err => {
       res.status(400).json(err);
-    });
+    })
 })
 
 
 
 //information for range page
 router.get("/api/workouts/range", (req, res) => {
-  Workout.find({}).then((dbWorkout) => {
-    res.json(dbWorkout);
-  }).catch(err => {
-    res.status(400).json(err);
-  });
+  Workout.aggregate([
+    {
+      $addFields: {
+        "totalDuration":
+        {
+          $sum: "$exercises.duration"
+        },
+      },
+    },
+  ])
+
+    .then((dbWorkout) => {
+      res.json(dbWorkout);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
 //post new workout
