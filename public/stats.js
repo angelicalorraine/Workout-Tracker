@@ -50,6 +50,13 @@ function populateChart(data) {
       ],
     },
     options: {
+      plugins: {
+        legend: {
+          labels: {
+            color: "white",
+          }
+        },
+      },
       responsive: true,
       title: {
         display: true,
@@ -58,7 +65,17 @@ function populateChart(data) {
       scales: {
         y: {
           beginAtZero: true,
+          ticks: {
+            color: "#ededed",
+            weight: "50px"
+          }
         },
+        x: {
+          ticks: {
+            color: "#ededed",
+            weight: "50px"
+          }
+        }
       },
     },
   });
@@ -87,23 +104,40 @@ function populateChart(data) {
             'rgba(153, 102, 255, 1)',
             'rgba(255, 159, 64, 1)',
           ],
-          borderWidth: 1,
+          borderWidth: 2,
         },
       ],
     },
     options: {
+      plugins: {
+        legend: {
+          labels: {
+            color: "white",
+          }
+        },
+      },
       title: {
         display: true,
         text: 'Pounds Lifted (Last 7 days)',
       },
+
+
       scales: {
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true,
-            },
+        y: {
+          ticks: {
+            beginAtZero: true,
+            color: "#ededed",
+            weight: "50px"
           },
-        ],
+        },
+
+        x: {
+          ticks: {
+            color: "#ededed",
+            weight: "50px"
+          }
+        }
+
       },
     },
   });
